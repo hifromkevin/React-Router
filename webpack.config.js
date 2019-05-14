@@ -31,5 +31,8 @@ module.exports = {
         loader: 'url-loader?limit=100000'
       }
 		]
+	},
+	externals: {
+		moment: 'moment'
 	}
 };
