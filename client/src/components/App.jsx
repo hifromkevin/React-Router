@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 
 import Navigation from './Navigation.jsx';
+import ChartFun from './ChartFun.jsx';
 
 const About = () => {
   return(
@@ -23,10 +24,6 @@ const Home = () => {
 export default class App extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      abilities: ['Access to state', 'Utilize components', 'Use FontAwesome and SASS']
-    }
   }
 
   render() {
@@ -39,6 +36,7 @@ export default class App extends Component {
             <Switch>
               <Route path="/" component={Home} exact />
               <Route path="/about" component={About} />
+              <Route path="/chartfun" component={ChartFun} />
             </Switch>
           </div>
         </BrowserRouter>    
