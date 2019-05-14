@@ -2,9 +2,10 @@
   "name": "react-router",
   "version": "1.0.0",
   "description": "Fun with React Router",
-  "main": "server/server.js",
+  "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/index.js",
+    "build": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,8 @@
     "path": "^0.12.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-fontawesome": "^1.6.1"
+    "react-fontawesome": "^1.6.1",
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
