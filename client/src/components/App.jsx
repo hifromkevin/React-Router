@@ -1,26 +1,48 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 
-import MyComponent from './MyComponent.jsx';
+import Navigation from './Navigation.jsx';
+
+const About = () => {
+  return(
+    <div>
+      <p>About</p>
+    </div>
+  );
+};
+
+const Home = () => {
+  return(
+    <div>
+      <p>Home!</p>
+    </div>
+  );
+};
 
 export default class App extends Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.state = {
-			abilities: ['Access to state', 'Utilize components', 'Use FontAwesome and SASS']
-		}
-	}
+    this.state = {
+      abilities: ['Access to state', 'Utilize components', 'Use FontAwesome and SASS']
+    }
+  }
 
-	render() {
-		return (<div className="main">
-			<h1 className="main__heading">Congratulations! <FontAwesome name="star" /></h1>
-			<p className="main__text">You now have a React application! You can:</p>
-			<ul className="main__list">{this.state.abilities.map((ability, i) => {
-				return <MyComponent key={i} ability={ability} />
-			})}</ul>
+  render() {
+    return (
+      <div className="main">
 
-			<p><em>To change the styles, go to client > dist > styles > style.sass </em></p>
-		</div>)
-	}
+        <BrowserRouter>
+          <div>
+          <Navigation />
+            <Switch>
+              <Route path="/" component={Home} exact />
+              <Route path="/about" component={About} />
+            </Switch>
+          </div>
+        </BrowserRouter>    
+      </div>
+    )
+  }
 }
